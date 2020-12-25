@@ -1,5 +1,5 @@
 {
-  "name": "dumi-demo",
+  "name": "zimi-components",
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
@@ -37,6 +37,8 @@
     "zimi-component"
   ],
   "dependencies": {
+    "dayjs": "^1.9.7",
+    "normalize.css": "^8.0.1",
     "react": "^16.12.0"
   },
   "devDependencies": {
