@@ -1,0 +1,8 @@
+dist/**/*
+demo/**/*
+es/**/*
+lib/**/*
+tests/**/*
+node_modules
+*.md
+package.json
