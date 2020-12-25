@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "dumi-demo",
   "version": "1.0.0",
   "scripts": {
@@ -11,32 +10,46 @@
     "release": "npm run build && npm publish",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s -r 0"
   },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "typings": "dist/index.d.ts",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
+    "*.{js,jsx,md,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.less": [
+      "prettier --write",
+      "stylelint --fix"
     ],
     "*.ts?(x)": [
       "prettier --parser=typescript --write"
     ]
   },
+  "author": "kokiy",
+  "homepage": "https://github.com/kokiy/react-h5-calendar",
+  "license": "MIT",
+  "repository": "https://github.com/kokiy/react-h5-calendar",
+  "keywords": [
+    "react-component",
+    "zimi-component"
+  ],
   "dependencies": {
     "react": "^16.12.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@umijs/fabric": "^2.4.5",
     "@umijs/test": "^3.0.5",
+    "conventional-changelog-cli": "^2.1.1",
     "dumi": "^1.0.10",
     "father-build": "^1.17.2",
     "gh-pages": "^3.0.0",
+    "husky": "^4.3.6",
     "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1",
-    "yorkie": "^2.0.0"
+    "prettier": "^1.19.1"
   }
 }
