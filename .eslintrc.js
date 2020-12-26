@@ -1,7 +1,12 @@
 module.exports = {
-  extends: [require.resolve('@umijs/fabric/dist/eslint')],
+  extends: [
+    require.resolve('@umijs/fabric/dist/eslint'),
+    'plugin:react/recommended',
+    'plugin:json/recommended',
+  ],
 
   globals: {},
+
   parser: 'babel-eslint',
   rules: {
     semi: [2, 'never'],

@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "size": {
+      "key": "size",
+      "type": "string",
+      "title": "间距",
+      "name": "size",
+      "enum": ["xs", "sm", "md", "lg", "xl"],
+      "x-component": "select"
+    },
+    "backgroundColor": {
+      "key": "backgroundColor",
+      "type": "string",
+      "title": "背景色",
+      "name": "backgroundColor",
+      "x-component": "input",
+      "x-component-props": {
+        "type": "color"
+      }
+    }
+  }
+}

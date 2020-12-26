@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "array": {
+      "key": "array",
+      "title": "",
+      "name": "array",
+      "maxItems": 5,
+      "type": "array",
+      "x-component": "arraycards",
+      "items": {
+        "type": "object",
+        "properties": {
+          "src": {
+            "key": "img-src",
+            "type": "string",
+            "title": "图片地址",
+            "name": "img-src",
+            "x-component": "input",
+            "x-rules": "url",
+            "triggerType": "onBlur"
+          },
+          "link": {
+            "key": "img-link",
+            "type": "string",
+            "title": "图片链接",
+            "name": "img-link",
+            "x-component": "input",
+            "x-rules": "url",
+            "triggerType": "onBlur"
+          }
+        }
+      }
+    }
+  }
+}
