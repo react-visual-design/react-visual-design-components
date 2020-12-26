@@ -3,9 +3,8 @@
 演示:
 
 ```jsx
-import dayjs from 'dayjs'
 import React, { Component } from 'react'
-import { render } from 'react-dom'
+import dayjs from 'dayjs'
 import { Calendar } from 'zimi-components'
 
 export default class Demo extends Component {

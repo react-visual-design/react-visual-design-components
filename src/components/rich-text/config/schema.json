@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "content": {
+      "key": "richText",
+      "type": "string",
+      "title": "内容",
+      "name": "richText",
+      "x-component": "RichText",
+      "triggerType": "onBlur",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "array": {
+      "key": "array",
+      "title": "",
+      "name": "array",
+      "maxItems": 5,
+      "type": "array",
+      "x-component": "arraycards",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "key": "title",
+            "type": "string",
+            "title": "标题",
+            "name": "title",
+            "x-component": "input",
+            "triggerType": "onBlur",
+            "required": true
+          },
+          "content": {
+            "key": "content",
+            "type": "string",
+            "title": "内容",
+            "name": "content",
+            "x-component": "textArea",
+            "triggerType": "onBlur",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "key": "title",
+      "type": "string",
+      "title": "标题",
+      "name": "title",
+      "x-component": "input"
+    },
+    "mode": {
+      "key": "size",
+      "type": "string",
+      "title": "模式",
+      "name": "size",
+      "enum": ["light", "dark"],
+      "x-component": "select"
+    }
+  }
+}
