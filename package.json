@@ -47,7 +47,7 @@
     "@umijs/fabric": "^2.4.5",
     "@umijs/test": "^3.0.5",
     "conventional-changelog-cli": "^2.1.1",
-    "dumi": "1.1.0-rc.8",
+    "dumi": "^1.1.0",
     "dumi-theme-mobile": "^1.0.0-rc.4",
     "eslint-plugin-json": "^2.1.2",
     "father-build": "^1.17.2",
