@@ -1,6 +1,7 @@
 export default {
-  esm: 'rollup',
-  cjs: 'rollup',
+  esm: { type: 'babel' },
+  cjs: { type: 'babel' },
+  lessInBabelMode: true,
   extraBabelPlugins: [
     [
       'babel-plugin-import',
