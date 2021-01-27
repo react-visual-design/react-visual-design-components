@@ -4,7 +4,7 @@ Demo:
 
 ```jsx
 import React from 'react'
-import { Picker } from 'zimi-components'
+import { Picker } from 'react-visual-design-components'
 
 export default () => <Picker />
 ```

@@ -5,7 +5,7 @@
 ```jsx
 import React, { Component } from 'react'
 import dayjs from 'dayjs'
-import { Calendar } from 'zimi-components'
+import { Calendar } from 'react-visual-design-components'
 
 export default class Demo extends Component {
   state = {

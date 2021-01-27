@@ -8,7 +8,7 @@ import leftArrow from '../../../public/arrow.svg'
 import rightArrow from '../../../public/arrow.svg'
 
 const head = ['日', '一', '二', '三', '四', '五', '六']
-class MonthView extends PureComponent {
+class Calendar extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
@@ -24,6 +24,13 @@ class MonthView extends PureComponent {
     }
     this.isTouching = false
     this.calendarRef = createRef(null)
+  }
+
+  static compAttr = {
+    name: 'Calendar',
+    id: 'Calendar',
+    title: '日历',
+    iconName: 'SwapOutlined',
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -196,11 +203,9 @@ class MonthView extends PureComponent {
                   className="month-cell"
                   key={`month-cell-${index}`}
                   style={{
-                    transform: `translate3d(${(index -
-                      1 +
-                      translateIndex +
-                      (this.isTouching ? touch.x : 0)) *
-                      100}%, ${calendarY}px, 0)`,
+                    transform: `translate3d(${
+                      (index - 1 + translateIndex + (this.isTouching ? touch.x : 0)) * 100
+                    }%, ${calendarY}px, 0)`,
                     transitionDuration: `${this.isTouching ? 0 : transitionDuration}s`,
                   }}
                 >
@@ -249,7 +254,7 @@ class MonthView extends PureComponent {
   }
 }
 
-MonthView.propTypes = {
+Calendar.propTypes = {
   currentDate: PropTypes.string,
   showType: PropTypes.oneOf(['week', 'month']),
   transitionDuration: PropTypes.number,
@@ -262,7 +267,7 @@ MonthView.propTypes = {
   markDates: PropTypes.array,
 }
 
-MonthView.defaultProps = {
+Calendar.defaultProps = {
   currentDate: dayjs().format('YYYY-MM-DD'),
   showType: 'month',
   transitionDuration: 0.3,
@@ -275,4 +280,4 @@ MonthView.defaultProps = {
   markDates: [],
 }
 
-export default MonthView
+export default Calendar

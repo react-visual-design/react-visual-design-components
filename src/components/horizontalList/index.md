@@ -4,7 +4,7 @@ Demo:
 
 ```jsx
 import React from 'react'
-import { HorizontalList } from 'zimi-components'
+import { HorizontalList } from 'react-visual-design-components'
 
 export default () => <HorizontalList />
 ```

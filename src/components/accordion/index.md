@@ -4,7 +4,7 @@ Demo:
 
 ```jsx
 import React from 'react'
-import { Accordion } from 'zimi-components'
+import { Accordion } from 'react-visual-design-components'
 
 export default () => <Accordion />
 ```
