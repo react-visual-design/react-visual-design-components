@@ -4,7 +4,7 @@ Demo:
 
 ```jsx
 import React from 'react'
-import { WhiteSpace } from 'zimi-components'
+import { WhiteSpace } from 'react-visual-design-components'
 
 export default () => <WhiteSpace data={{ size: 'md', backgroundColor: '#f00' }} />
 ```

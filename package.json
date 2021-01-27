@@ -1,5 +1,5 @@
 {
-  "name": "zimi-components",
+  "name": "react-visual-design-components",
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
@@ -13,8 +13,12 @@
     "test:coverage": "umi-test --coverage",
     "changelog": "conventional-changelog -p angular -i ./CHANGELOG.md -s -r 0"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib"
+  ],
   "lint-staged": {
     "*.{js,jsx,md,json}": [
       "prettier --write",
@@ -29,12 +33,12 @@
     ]
   },
   "author": "kokiy",
-  "homepage": "git@github.com:kokiy/zimi-components.git",
+  "homepage": "https://github.com/react-visual-design/react-visual-design-components",
   "license": "MIT",
-  "repository": "git@github.com:kokiy/zimi-components.git",
+  "repository": "https://github.com/react-visual-design/react-visual-design-components",
   "keywords": [
     "react-component",
-    "zimi-component"
+    "react-visual-design-components"
   ],
   "dependencies": {
     "antd-mobile": "^2.3.4",

@@ -4,7 +4,7 @@ Demo:
 
 ```jsx
 import React from 'react'
-import { Image } from 'zimi-components'
+import { Image } from 'react-visual-design-components'
 
 export default () => <Image />
 ```

@@ -4,7 +4,7 @@ Demo:
 
 ```jsx
 import React from 'react'
-import { Carousel } from 'zimi-components'
+import { Carousel } from 'react-visual-design-components'
 
 export default () => <Carousel />
 ```

@@ -4,7 +4,7 @@ Demo:
 
 ```jsx
 import React from 'react'
-import { NavBar } from 'zimi-components'
+import { NavBar } from 'react-visual-design-components'
 
 export default () => <NavBar />
 ```

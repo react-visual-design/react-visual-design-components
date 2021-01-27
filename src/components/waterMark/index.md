@@ -4,7 +4,7 @@ Demo:
 
 ```jsx
 import React from 'react'
-import { WaterMark } from 'zimi-components'
+import { WaterMark } from 'react-visual-design-components'
 
 export default () => (
   <WaterMark>
