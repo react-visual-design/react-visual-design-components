@@ -167,7 +167,7 @@ class Calendar extends PureComponent {
     const { currentDate, transitionDuration, markDates, markType } = this.props
     const isMonthView = showType === 'month'
     return (
-      <div className="light-react-calendar">
+      <div className="calendar">
         <div className="calendar-operate">
           <div className="icon left-icon" onClick={this.handleMonthToggle.bind(this, 'prev')}>
             <img src={leftArrow} />
