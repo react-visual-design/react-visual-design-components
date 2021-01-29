@@ -1,4 +1,6 @@
-# dumi-demo
+# react-visual-design-components
+
+## [Document link](https://react-visual-design.github.io/react-visual-design-components/)
 
 ## Getting Started
 

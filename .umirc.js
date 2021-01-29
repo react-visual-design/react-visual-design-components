@@ -2,11 +2,9 @@
 import { defineConfig } from 'dumi'
 
 export default defineConfig({
-  title: 'dumi-demo',
-  favicon:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  logo:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+  title: '组件列表',
+  favicon: 'https://en.gravatar.com/avatar/b7663bf27f4e2e54c5cec2fa12b8cfc0',
+  logo: 'https://en.gravatar.com/avatar/b7663bf27f4e2e54c5cec2fa12b8cfc0',
   outputPath: 'docs-dist',
   hash: true,
   publicPath: '/react-visual-design-components/',
