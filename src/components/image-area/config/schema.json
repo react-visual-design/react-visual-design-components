@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "src": {
+      "key": "src",
+      "type": "string",
+      "title": "图片地址",
+      "name": "src",
+      "required": true,
+      "x-component": "input",
+      "x-rules": "url",
+      "triggerType": "onBlur"
+    }
+  }
+}
