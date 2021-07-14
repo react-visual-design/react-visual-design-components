@@ -17,13 +17,6 @@ export default class ImageArea extends Component {
     data: defaultData,
   }
 
-  static compAttr = {
-    name: 'ImageArea',
-    id: 'ImageArea',
-    title: '热点图',
-    iconName: 'PictureOutlined',
-  }
-
   imgContainerRef = createRef(null)
   imgRef = createRef(null)
   imgmapName = v4()
