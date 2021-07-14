@@ -2,19 +2,31 @@
   "type": "object",
   "properties": {
     "title": {
-      "key": "title",
       "type": "string",
       "title": "标题",
-      "name": "title",
-      "x-component": "input"
+      "x-decorator": "FormItem",
+      "x-component": "Input",
+      "x-validator": [
+        {
+          "triggerType": "onBlur"
+        }
+      ]
     },
     "mode": {
-      "key": "size",
       "type": "string",
       "title": "模式",
-      "name": "size",
-      "enum": ["light", "dark"],
-      "x-component": "select"
+      "x-decorator": "FormItem",
+      "x-component": "Select",
+      "enum": [
+        {
+          "label": "明亮",
+          "value": "light"
+        },
+        {
+          "label": "暗黑",
+          "value": "dark"
+        }
+      ]
     }
   }
 }

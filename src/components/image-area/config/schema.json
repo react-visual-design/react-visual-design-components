@@ -5,11 +5,14 @@
       "key": "src",
       "type": "string",
       "title": "图片地址",
-      "name": "src",
-      "required": true,
-      "x-component": "input",
-      "x-rules": "url",
-      "triggerType": "onBlur"
+      "x-component": "Input",
+      "x-validator": [
+        {
+          "required": true,
+          "format": "url",
+          "triggerType": "onBlur"
+        }
+      ]
     }
   }
 }

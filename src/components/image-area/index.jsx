@@ -1,6 +1,6 @@
 import React, { createRef, Component } from 'react'
 import PropTypes from 'prop-types'
-import { v4 as uuidv4 } from 'uuid'
+import { v4 } from 'uuid'
 import Area from './area'
 import './index.less'
 import placeHolderImg from '../../../public/placeholder-1.png'
@@ -26,7 +26,7 @@ export default class ImageArea extends Component {
 
   imgContainerRef = createRef(null)
   imgRef = createRef(null)
-  imgmapName = uuidv4()
+  imgmapName = v4()
   getCursorPosition = e => {
     const { left, top } = this.imgContainerRef.current.getBoundingClientRect()
     return {
@@ -39,7 +39,7 @@ export default class ImageArea extends Component {
     if (e.target === this.imgRef.current || e.target === this.imgContainerRef.current) {
       const { x, y } = this.getCursorPosition(e)
       pointStart = { x, y }
-      currentId = uuidv4()
+      currentId = v4()
     } else {
       pointStart = { x: null, y: null }
       currentId = null

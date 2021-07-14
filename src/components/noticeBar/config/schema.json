@@ -2,13 +2,16 @@
   "type": "object",
   "properties": {
     "content": {
-      "key": "content",
       "type": "string",
       "title": "内容",
-      "name": "content",
-      "x-component": "textArea",
-      "triggerType": "onBlur",
-      "required": true
+      "x-decorator": "FormItem",
+      "x-component": "TextArea",
+      "x-validator": [
+        {
+          "triggerType": "onBlur",
+          "required": true
+        }
+      ]
     }
   }
 }
