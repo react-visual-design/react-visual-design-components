@@ -5,7 +5,7 @@ import propSchema from './config/schema.json'
 import defaultData from './config/data.json'
 import './index.less'
 
-export default class NewCarousel extends PureComponent {
+export default class NewAccordion extends PureComponent {
   static propTypes = {
     data: PropTypes.object,
   }
