@@ -1,6 +1,6 @@
 {
   "name": "react-visual-design-components",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -17,8 +17,7 @@
   "module": "es/index.js",
   "files": [
     "es",
-    "lib",
-    "public"
+    "lib"
   ],
   "lint-staged": {
     "*.{js,jsx,md,json}": [

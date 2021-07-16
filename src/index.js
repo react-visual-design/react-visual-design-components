@@ -1,4 +1,5 @@
 export { default as Accordion } from './components/accordion'
+export { default as Calendar } from './components/calendar'
 export { default as Carousel } from './components/carousel'
 export { default as HorizontalList } from './components/horizontalList'
 export { default as Image } from './components/image'

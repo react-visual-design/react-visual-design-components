@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import propSchema from './config/schema.json'
 import defaultData from './config/data.json'
-import placeHolderImg from '../../../public/placeholder-1.png'
+import { defaultImg } from '../../util/img'
 
 import './index.less'
 
@@ -32,7 +32,7 @@ export default class HorizontalList extends PureComponent {
         {array.map((item, index) => (
           <div key={index} className="item">
             <a href={item.link}>
-              <img src={item.src || placeHolderImg} />
+              <img src={item.src || defaultImg} />
             </a>
             <span>{item.text}</span>
           </div>

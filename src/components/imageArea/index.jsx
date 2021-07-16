@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 import Area from './area'
 import './index.less'
-import placeHolderImg from '../../../public/placeholder-1.png'
+import { defaultImg } from '../../util/img'
 import defaultData from './config/data.json'
 let pointStart = { x: null, y: null }
 let currentId = null
@@ -72,7 +72,7 @@ export default class ImageArea extends Component {
         <img
           className="img"
           ref={this.imgRef}
-          src={src || placeHolderImg}
+          src={src || defaultImg}
           width={width}
           height={height}
           alt=""

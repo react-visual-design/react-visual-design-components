@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './index.less'
 import propSchema from './config/schema.json'
 import defaultData from './config/data.json'
-import placeHolderImg from '../../../public/placeholder-1.png'
+import { defaultImg } from '../../util/img'
 
 export default class Image extends PureComponent {
   static propTypes = {
@@ -30,7 +30,7 @@ export default class Image extends PureComponent {
     } = this.props
     return (
       <a className="visual-design-img" href={link}>
-        <img className="img" src={src || placeHolderImg} />
+        <img className="img" src={src || defaultImg} />
       </a>
     )
   }

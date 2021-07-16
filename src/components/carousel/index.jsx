@@ -4,7 +4,7 @@ import { Carousel } from 'antd-mobile'
 import propSchema from './config/schema.json'
 import defaultData from './config/data.json'
 import './index.less'
-import placeHolderImg from '../../../public/placeholder.png'
+import { carouselDefaultImg } from '../../util/img'
 
 export default class NewCarousel extends PureComponent {
   static propTypes = {
@@ -44,7 +44,7 @@ export default class NewCarousel extends PureComponent {
             }}
           >
             <img
-              src={item.src || placeHolderImg}
+              src={item.src || carouselDefaultImg}
               style={{ width: '100%' }}
               onLoad={() => {
                 // fire window resize event to change height
