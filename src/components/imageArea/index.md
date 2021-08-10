@@ -5,7 +5,6 @@ Demo:
 ```jsx
 import React, { Component } from 'react'
 import { ImageArea } from 'react-visual-design-components'
-import Img from './demo.jpg'
 
 export default class ImageAreaDemo extends Component {
   state = {

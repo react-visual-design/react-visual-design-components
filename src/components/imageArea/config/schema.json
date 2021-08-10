@@ -15,10 +15,10 @@
       ]
     },
     "coordinates": {
-      "type": "string",
-      "title": "",
+      "type": "array",
+      "title": "图片热区",
       "x-decorator": "FormItem",
-      "x-component": "imageArea"
+      "x-component": "ImageArea"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-visual-design-components",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
