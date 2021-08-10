@@ -2,9 +2,9 @@
   "type": "object",
   "properties": {
     "src": {
-      "key": "src",
       "type": "string",
       "title": "图片地址",
+      "x-decorator": "FormItem",
       "x-component": "Input",
       "x-validator": [
         {
@@ -13,6 +13,12 @@
           "triggerType": "onBlur"
         }
       ]
+    },
+    "coordinates": {
+      "type": "string",
+      "title": "",
+      "x-decorator": "FormItem",
+      "x-component": "imageArea"
     }
   }
 }

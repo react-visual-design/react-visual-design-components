@@ -28,20 +28,7 @@ export default class ImageAreaDemo extends Component {
       },
     ],
   }
-  updateCoordinate = ({ type, coordinate }) => {
-    let { coordinates } = this.state
-    const matchIndex = coordinates.findIndex(item => item.id === coordinate.id)
-    if (type === 'delete') {
-      coordinates.splice(matchIndex, 1)
-    } else if (type === 'add' || type === 'update') {
-      if (matchIndex === -1) {
-        coordinates = [...coordinates, coordinate]
-      } else {
-        coordinates[matchIndex] = coordinate
-      }
-    }
-    this.setState({ coordinates: [...coordinates] })
-  }
+
   render() {
     const { coordinates } = this.state
     return <ImageArea coordinates={coordinates} updateCoordinate={this.updateCoordinate} />

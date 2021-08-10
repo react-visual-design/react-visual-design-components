@@ -1,80 +1,49 @@
-import React, { createRef, Component } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
-import Area from './area'
+import propSchema from './config/schema.json'
 import './index.less'
 import { defaultImg } from '../../util/img'
 import defaultData from './config/data.json'
-let pointStart = { x: null, y: null }
-let currentId = null
 
 export default class ImageArea extends Component {
   static propTypes = {
     data: PropTypes.object,
+    imgSrc: PropTypes.string,
+    imgWidth: PropTypes.string,
+    imgHeight: PropTypes.string,
   }
 
   static defaultProps = {
     data: defaultData,
+    imgSrc: '',
+    imgWidth: '100%',
+    imgHeight: '100%',
   }
 
-  imgContainerRef = createRef(null)
-  imgRef = createRef(null)
+  static compAttr = {
+    name: 'ImageArea',
+    id: 'ImageArea',
+    title: '热力图',
+    iconName: 'PictureOutlined',
+  }
+
+  static propSchema = propSchema
+
   imgmapName = v4()
-  getCursorPosition = e => {
-    const { left, top } = this.imgContainerRef.current.getBoundingClientRect()
-    return {
-      x: e.clientX - left,
-      y: e.clientY - top,
-    }
-  }
-
-  onMouseDown = e => {
-    if (e.target === this.imgRef.current || e.target === this.imgContainerRef.current) {
-      const { x, y } = this.getCursorPosition(e)
-      pointStart = { x, y }
-      currentId = v4()
-    } else {
-      pointStart = { x: null, y: null }
-      currentId = null
-    }
-  }
-
-  onMouseMove = e => {
-    const { updateCoordinate } = this.props
-    if (pointStart.x && pointStart.y) {
-      const pointEnd = this.getCursorPosition(e)
-      const newCoordinate = {
-        x: Math.min(pointStart.x, pointEnd.x),
-        y: Math.min(pointStart.y, pointEnd.y),
-        width: Math.abs(pointStart.x - pointEnd.x),
-        height: Math.abs(pointStart.y - pointEnd.y),
-        id: currentId,
-      }
-      updateCoordinate({ type: 'add', coordinate: newCoordinate })
-    }
-  }
-
-  onMouseUp = () => {
-    pointStart = { x: null, y: null }
-    currentId = null
-  }
 
   render() {
-    const { src, width = '100%', height = '100%', coordinates, updateCoordinate } = this.props
+    const { imgWidth, imgHeight } = this.props
+    const {
+      data: { src, coordinates },
+    } = this.props
     return (
-      <div
-        className="visual-design-img-area-container"
-        onMouseDown={this.onMouseDown}
-        onMouseMove={this.onMouseMove}
-        onMouseUp={this.onMouseUp}
-        ref={this.imgContainerRef}
-      >
+      <div className="visual-design-img-area-container">
         <img
           className="img"
-          ref={this.imgRef}
           src={src || defaultImg}
-          width={width}
-          height={height}
+          width={imgWidth}
+          height={imgHeight}
           alt=""
           draggable={false}
           useMap={`#${this.imgmapName}`}
@@ -90,9 +59,6 @@ export default class ImageArea extends Component {
             />
           ))}
         </map>
-        {coordinates.map(coordinate => (
-          <Area key={coordinate.id} coordinate={coordinate} updateCoordinate={updateCoordinate} />
-        ))}
       </div>
     )
   }

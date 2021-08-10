@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 const serializePostMessageData = data => {
   if (typeof data === 'object') {
     return JSON.stringify(data)
-  } else if (typeof data === 'string') {
-    return data
-  } else {
-    return `${data}`
   }
+  if (typeof data === 'string') {
+    return data
+  }
+  return `${data}`
 }
 
 const defaultAttributes = {
@@ -18,6 +18,7 @@ const defaultAttributes = {
 
 class Iframe extends Component {
   frameRef = createRef()
+
   componentDidMount() {
     window.addEventListener('message', this.onReceiveMessage)
     this.frameRef.current.addEventListener('load', this.onLoad)
@@ -27,9 +28,9 @@ class Iframe extends Component {
     window.removeEventListener('message', this.onReceiveMessage)
   }
 
-  componentDidUpdate(nextProps) {
-    if (this.props.postMessageData !== nextProps.postMessageData) {
-      this.sendMessage(nextProps.postMessageData)
+  componentDidUpdate(prevProps) {
+    if (this.props.postMessageData !== prevProps.postMessageData) {
+      this.sendMessage(this.props.postMessageData)
     }
   }
 
@@ -39,6 +40,7 @@ class Iframe extends Component {
       handleReceiveMessage(event)
     }
   }
+
   onLoad = () => {
     const { handleReady } = this.props
     if (handleReady) {
@@ -52,6 +54,7 @@ class Iframe extends Component {
     const serializedData = serializePostMessageData(postMessageData)
     this.frameRef.current.contentWindow.postMessage(serializedData, targetOrigin)
   }
+
   render() {
     const { attributes } = this.props
     const mergedAttributes = { ...defaultAttributes, ...attributes }

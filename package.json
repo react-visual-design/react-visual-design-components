@@ -1,6 +1,6 @@
 {
   "name": "react-visual-design-components",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -43,7 +43,6 @@
   "dependencies": {
     "antd-mobile": "^2.3.4",
     "dayjs": "^1.9.7",
-    "interactjs": "^1.10.11",
     "lodash": "^4.17.21",
     "react": "^17.0.1",
     "uuid": "^8.3.2"
