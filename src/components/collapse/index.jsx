@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Accordion } from 'antd-mobile'
+import { Collapse } from 'antd-mobile'
 import propSchema from './config/schema.json'
 import defaultData from './config/data.json'
 import './index.less'
 
-export default class NewAccordion extends PureComponent {
+export default class NewCollapse extends PureComponent {
   static propTypes = {
     data: PropTypes.object,
   }
@@ -15,9 +15,9 @@ export default class NewAccordion extends PureComponent {
   }
 
   static compAttr = {
-    name: 'Accordion',
-    id: 'accordion',
-    title: '手风琴',
+    name: 'Collapse',
+    id: 'collapse',
+    title: '折叠面板',
     iconName: 'OrderedListOutlined',
   }
 
@@ -26,14 +26,14 @@ export default class NewAccordion extends PureComponent {
   render() {
     const { array } = this.props.data
     return (
-      <div className="visual-design-accordion">
-        {array.map(({ title, content }, i) => (
-          <Accordion key={i}>
-            <Accordion.Panel header={title} className="pad">
+      <div className="visual-design-collapse">
+        <Collapse>
+          {array.map(({ title, content }, i) => (
+            <Collapse.Panel key={i} title={title}>
               {content}
-            </Accordion.Panel>
-          </Accordion>
-        ))}
+            </Collapse.Panel>
+          ))}
+        </Collapse>
       </div>
     )
   }

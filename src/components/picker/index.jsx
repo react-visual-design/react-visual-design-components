@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Picker, List } from 'antd-mobile'
+import { Picker, Button } from 'antd-mobile'
 
 import propSchema from './config/schema.json'
 import defaultData from './config/data.json'
@@ -23,17 +23,39 @@ export default class NewPicker extends PureComponent {
 
   static propSchema = propSchema
 
+  state = {
+    visible: false,
+    value: [2],
+  }
+
   render() {
+    const { visible, value } = this.state
     return (
-      <Picker
-        data={[
-          { value: 1, label: '陕西' },
-          { value: 2, label: '山西' },
-        ]}
-        cols={1}
-      >
-        <List.Item arrow="horizontal">single</List.Item>
-      </Picker>
+      <>
+        <Button
+          onClick={() => {
+            this.setState({ visible: true })
+          }}
+        >
+          选择
+        </Button>
+        <Picker
+          visible={visible}
+          columns={[
+            [
+              { value: 1, label: '陕西' },
+              { value: 2, label: '山西' },
+            ],
+          ]}
+          value={value}
+          onClose={() => {
+            this.setState({ visible: false })
+          }}
+          onConfirm={checkedValue => {
+            this.setState({ value: checkedValue })
+          }}
+        />
+      </>
     )
   }
 }

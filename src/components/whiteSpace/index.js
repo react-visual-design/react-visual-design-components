@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { WhiteSpace } from 'antd-mobile'
 
 import propSchema from './config/schema.json'
 import defaultData from './config/data.json'
+import './index.less'
 
 export default class NewWhiteSpace extends PureComponent {
   static propTypes = {
@@ -26,8 +26,8 @@ export default class NewWhiteSpace extends PureComponent {
   render() {
     const { data } = this.props
     return (
-      <div>
-        <WhiteSpace style={{ backgroundColor: data.backgroundColor }} size={data.size} />
+      <div className="visual-design-white-space">
+        <div style={{ backgroundColor: data.backgroundColor }} className={data.size} />
       </div>
     )
   }

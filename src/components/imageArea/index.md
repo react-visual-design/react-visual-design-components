@@ -30,7 +30,13 @@ export default class ImageAreaDemo extends Component {
 
   render() {
     const { coordinates } = this.state
-    return <ImageArea coordinates={coordinates} updateCoordinate={this.updateCoordinate} />
+    return (
+      <ImageArea
+        data={{
+          coordinates,
+        }}
+      />
+    )
   }
 }
 ```

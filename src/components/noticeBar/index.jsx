@@ -23,12 +23,25 @@ export default class NewNoticeBar extends PureComponent {
 
   static propSchema = propSchema
 
+  state = {
+    visible: true,
+  }
+
+  closeNoTice = () => {
+    this.setState({ visible: false })
+  }
+
   render() {
     const { data } = this.props
-    return (
-      <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }} mode="closable">
-        {data.content}
-      </NoticeBar>
-    )
+    const { visible } = this.state
+    return visible ? (
+      <NoticeBar
+        mode="closable"
+        delay={0}
+        closeable
+        onClose={this.closeNoTice}
+        content={data.content}
+      />
+    ) : null
   }
 }

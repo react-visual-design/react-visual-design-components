@@ -1,4 +1,6 @@
-export { default as Accordion } from './components/accordion'
+import 'antd-mobile/index.css'
+
+export { default as Collapse } from './components/collapse'
 export { default as Calendar } from './components/calendar'
 export { default as Carousel } from './components/carousel'
 export { default as HorizontalList } from './components/horizontalList'

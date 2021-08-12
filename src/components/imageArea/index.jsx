@@ -9,12 +9,10 @@ import defaultData from './config/data.json'
 export default class ImageArea extends Component {
   static propTypes = {
     data: PropTypes.object,
-    imgSrc: PropTypes.string,
   }
 
   static defaultProps = {
     data: defaultData,
-    imgSrc: '',
   }
 
   static compAttr = {
@@ -35,17 +33,13 @@ export default class ImageArea extends Component {
     imgHeightZoomRadio: null,
   }
 
-  componentDidMount() {
-    this.imgRef.current.onload = () => {
-      this.setState({
-        imgWidthZoomRadio: +(this.imgRef.current.width / this.imgRef.current.naturalWidth).toFixed(
-          2,
-        ),
-        imgHeightZoomRadio: +(
-          this.imgRef.current.height / this.imgRef.current.naturalHeight
-        ).toFixed(2),
-      })
-    }
+  onImgLoad = () => {
+    this.setState({
+      imgWidthZoomRadio: +(this.imgRef.current.width / this.imgRef.current.naturalWidth).toFixed(2),
+      imgHeightZoomRadio: +(this.imgRef.current.height / this.imgRef.current.naturalHeight).toFixed(
+        2,
+      ),
+    })
   }
 
   render() {
@@ -59,6 +53,7 @@ export default class ImageArea extends Component {
           className="img"
           src={src || defaultImg}
           alt=""
+          onLoad={this.onImgLoad}
           ref={this.imgRef}
           draggable={false}
           useMap={`#${this.imgmapName}`}

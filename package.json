@@ -41,7 +41,7 @@
     "react-visual-design-components"
   ],
   "dependencies": {
-    "antd-mobile": "^2.3.4",
+    "antd-mobile": "^5.0.0-alpha.9",
     "dayjs": "^1.9.7",
     "lodash": "^4.17.21",
     "react": "^17.0.1",
